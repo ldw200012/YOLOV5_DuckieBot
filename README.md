@@ -5,13 +5,14 @@
 
 # I. Introduction to Object Recognition
 
+# II. Introduction to [Algorithm]
 
-# II. How to install ROS Noetic
+# III. How to install ROS Noetic
 You can take a look at below ROS Wiki page to follow instructions to ROS Noetic installation
 
 http://wiki.ros.org/noetic/Installation/Ubuntu
 
-# III. How to create ROS Workspace and Package
+# IV. How to create ROS Workspace and Package
 1. Create a ROS workspace
 
        $ mkdir -p ~/catkin_ws/src
@@ -32,16 +33,11 @@ http://wiki.ros.org/noetic/Installation/Ubuntu
        $ cd ~/catkin_ws
        $ catkin_make
        $ source devel/setup.bash (This command must be run on every shell you are using for ROS from now on)
-
-# IV. How to use 
-
-    - https://filterpy.readthedocs.io/en/latest/kalman/KalmanFilter.html
-
 ***
 # About the Project
 
-#### Module Name: CA-RIS-801 | Marine Robotics (Spring 2021), Jacobs University Bremen (JUB)
-#### Instructors: Dr. Evelina Dineva | Prof. Dr. Francesco Maurelli
-#### Contributors: Dongwook Lee (do.lee@jacobs-university.de) | Katrin von Seggern (K.vonSeggern@jacobs-university.de)
+#### Module Name: 
+#### Instructors: 
+#### Contributors: 
 
 
