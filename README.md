@@ -2,17 +2,16 @@
 #### <div align="center">" This repository is created for object recognition functionality of Duckiebot, </div>
 #### <div align="center"> which reads the camera view of a duckiebot and detects the obstacle in the front. "</div>
 ***
+# I. Introduction to [Algorithm]
 
-# I. Introduction to Object Recognition
+# II. Introduction to ROS
 
-# II. Introduction to [Algorithm]
-
-# III. How to install ROS Noetic
+### A. How to install ROS Noetic
 You can take a look at below ROS Wiki page to follow instructions to ROS Noetic installation
 
 http://wiki.ros.org/noetic/Installation/Ubuntu
 
-# IV. How to create ROS Workspace and Package
+### B. How to create ROS Workspace and Package
 1. Create a ROS workspace
 
        $ mkdir -p ~/catkin_ws/src
@@ -33,6 +32,8 @@ http://wiki.ros.org/noetic/Installation/Ubuntu
        $ cd ~/catkin_ws
        $ catkin_make
        $ source devel/setup.bash (This command must be run on every shell you are using for ROS from now on)
+       
+# III. How to run the program
 ***
 # About the Project
 
