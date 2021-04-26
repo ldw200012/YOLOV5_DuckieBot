@@ -2,19 +2,23 @@
 
 from sensor_msgs.msg import CompressedImage
 
+image_count = 0
+
 
 def callback(data):
 	pub = rospy.Publisher('camera_input_check', CompressedImage, queue_size=100)
 	pub.publish(data)
 
+	image_count += 1
+
 
 def camera_saver():
 	import rospy
-	
+
 	rospy.init_node('camera_node', anonymous=True)
 	rate = rospy.Rate(50)
 
-	while not rospy.is_shutdowm():
+	while image_count < 10: # 500
 		sub = rospy.Subscriber("/JoudiDuck/camera_node/image/compressed", CompressedImage, callback)
 		rate.sleep()
 
