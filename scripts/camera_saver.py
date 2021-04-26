@@ -2,11 +2,11 @@
 import rospy
 from PIL import Image
 import numpy as np
-from sensor_msgs.msg import CompressedImage
+from sensor_msgs.msg import Image
 
 
 def callback(data):
-	pub = rospy.Publisher('camera_input_check', CompressedImage, queue_size=10)
+	pub = rospy.Publisher('camera_input_check', Image, queue_size=10)
 	pub.publish(data)
 	print(data.data)
 	# img_array = np.array(data.data)
@@ -29,7 +29,8 @@ def camera_saver():
 	rate = rospy.Rate(50)
 
 	while 1: # 500
-		sub = rospy.Subscriber("/JoudiDuck/camera_node/image/compressed", CompressedImage, callback)
+		# rosrun image_transport republish compressed in:=/JoudiDuck/camera_node/image raw out:=/JoudiDuck/camera_node/image/raw
+		sub = rospy.Subscriber("/JoudiDuck/camera_node/image/raw", Image, callback)
 		rate.sleep()
 
 
