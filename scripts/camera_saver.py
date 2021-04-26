@@ -12,7 +12,7 @@ def camera_saver():
 	rospy.init_node('camera_node', anonymous=True)
 	rate = rospy.Rate(50)
 
-	for img_count in range(10): # 500
+	while 1: # 500
 		sub = rospy.Subscriber("/JoudiDuck/camera_node/image/compressed", CompressedImage, callback)
 		rate.sleep()
 
