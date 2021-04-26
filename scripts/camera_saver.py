@@ -8,9 +8,12 @@ from sensor_msgs.msg import Image
 def callback(data):
 	pub = rospy.Publisher('camera_input_check', Image, queue_size=10)
 	pub.publish(data)
-	print(len(data))
-	# img_array = np.array(data.data)
-	# img_array = img_array.reshape((480, 640))
+
+	
+	img_array = np.array(data.data)
+	img_array = img_array.reshape((480, 640))
+	print(data.height, data.width)
+	print(img_array)
 
 	# rescaled = (255.0 / img_array.max() * (img_array - img_array.min())).astype(np.uint8)
 
