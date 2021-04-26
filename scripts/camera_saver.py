@@ -11,7 +11,7 @@ def callback(data):
 
 	
 	img_array = np.array(data.data)
-	img_array = img_array.reshape((480, 640))
+	# img_array = img_array.reshape((480, 640))
 	print(data.height, data.width)
 	print(img_array)
 
