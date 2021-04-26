@@ -2,8 +2,6 @@
 import rospy
 from sensor_msgs.msg import CompressedImage
 
-global image_count
-
 
 def callback(data):
 	pub = rospy.Publisher('camera_input_check', CompressedImage, queue_size=100)
@@ -23,6 +21,7 @@ def camera_saver():
 
 if __name__=='__main__':
 	try:
+		global image_count
 		image_count = 0
 		camera_saver()
 	except rospy.ROSInterruptException:
