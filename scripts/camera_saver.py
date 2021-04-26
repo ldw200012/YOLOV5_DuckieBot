@@ -12,12 +12,15 @@ def callback(data):
 	data = np.array(data)
 	data = data.reshape((480, 640))
 
-	w, h = 480, 640
-	data = np.zeros((h, w, 3), dtype=np.uint8)
-	data[0:240, 0:320] = [255, 0, 0] # red patch in upper left
-	img = Image.fromarray(data, 'RGB')
+	rescaled = (255.0 / data.max() * (data - data.min())).astype(np.uint8)
+
+	# w, h = 480, 640
+	# data = np.zeros((h, w, 3), dtype=np.uint8)
+	# data[0:240, 0:320] = [255, 0, 0] # red patch in upper left
+	# img = Image.fromarray(data, 'RGB')
+	
+	img = Image.fromarray(rescaled)
 	img.save('my.png')
-	img.show()
 
 
 def camera_saver():
