@@ -1,5 +1,5 @@
 #!usr/bin/env python
-import rospy
+
 from sensor_msgs.msg import CompressedImage
 
 
@@ -9,6 +9,8 @@ def callback(data):
 
 
 def camera_saver():
+	import rospy
+	
 	rospy.init_node('camera_node', anonymous=True)
 	rate = rospy.Rate(50)
 
