@@ -6,7 +6,7 @@
 
 # What you need to prepare
 1. Linux environment
-2. Annotated Image group for your own dataset
+2. Image group for your own dataset
 
 # I. Introduction to YOLOv5
 
