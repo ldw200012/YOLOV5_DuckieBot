@@ -13,9 +13,11 @@
 Reference Video : https://www.youtube.com/watch?v=MdF6x6ZmLAY by Roboflow
 
 - YOLOv5 algorithm on Google Colab
+       
        Fully follow the instructions of the reference video.
 
 - YOLOv5 algorithm on ROS
+       
        Follow the instructions on the reference video until 15:40.
 
 
