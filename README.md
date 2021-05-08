@@ -13,9 +13,7 @@
 # II. Introduction to ROS
 
 ### A. How to install ROS Noetic
-You can take a look at below ROS Wiki page to follow instructions to ROS Noetic installation
-
-http://wiki.ros.org/noetic/Installation/Ubuntu
+You can take a look at the ROS Wiki page to follow ,a href="http://wiki.ros.org/noetic/Installation/Ubuntu">instructions to ROS Noetic installation</a>.
 
 ### B. How to create ROS Workspace and Package
 1. Create a ROS workspace
@@ -51,11 +49,12 @@ http://wiki.ros.org/noetic/Installation/Ubuntu
      
 2. Data Annotation
 
-      https://blog.roboflow.com/vott/
+      Follow the instructions in Roboflow https://blog.roboflow.com/vott/
       
 3. Dataset Creation
        
       Follow the instructions in Roboflow https://www.youtube.com/watch?v=MdF6x6ZmLAY until 15:40.
+      
       From now on, you need to remember the <font style="color: red;">'link'</font> provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
 ### B. Train dataset
