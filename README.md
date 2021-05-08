@@ -55,7 +55,7 @@
        
       Follow the instructions in Roboflow https://www.youtube.com/watch?v=MdF6x6ZmLAY until 15:40.
       
-      From now on, you need to remember the '''''link''''' provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
+      From now on, you need to remember the "<b>link</b>" provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
 ### B. Train dataset
 1. Go into the '/content' folder in this git repository.
