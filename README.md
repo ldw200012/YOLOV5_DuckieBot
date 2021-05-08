@@ -43,13 +43,13 @@
 
       i. Data preparation from duckiebot camera (You can skip this step if you already have your own images).
        
-          $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
-          $ cd [folder_directory_to_save_images]
-          $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw
+       $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
+       $ cd [folder_directory_to_save_images]
+       $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw
      
       ii. Data Annotation
 
-          Follow the instructions in Roboflow https://blog.roboflow.com/vott/
+      - Follow the instructions in Roboflow https://blog.roboflow.com/vott/
       
       iii. Dataset Creation
        
