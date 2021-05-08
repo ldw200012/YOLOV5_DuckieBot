@@ -13,7 +13,7 @@
 # II. Introduction to ROS
 
 ### A. How to install ROS Noetic
-You can take a look at the ROS Wiki page to follow ,a href="http://wiki.ros.org/noetic/Installation/Ubuntu">instructions to ROS Noetic installation</a>.
+You can take a look at the ROS Wiki page to follow <a href="http://wiki.ros.org/noetic/Installation/Ubuntu">instructions to ROS Noetic installation</a>.
 
 ### B. How to create ROS Workspace and Package
 1. Create a ROS workspace
