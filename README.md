@@ -55,9 +55,7 @@
        
       Follow the instructions in Roboflow https://www.youtube.com/watch?v=MdF6x6ZmLAY until 15:40.
       
-      From now on, you need to remember the
-      ### 'link'
-      provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
+      From now on, you need to remember the '''''link''''' provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
 ### B. Train dataset
 1. Go into the '/content' folder in this git repository.
@@ -83,7 +81,9 @@
        >> 
        >> print('Setup complete. Using torch %s %s' % (torch.__version__, torch.cuda.get_device_properties(0) if torch.cuda.is_available() else 'CPU'))
 
-5. Copy and paste the Terminal link from your Roboflow dataset. (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
+5. Copy and paste the Terminal link from your Roboflow dataset.
+       
+   (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
        $ cd Duckietown_YOLOv5/content
        $ curl -L "https://app.roboflow.com/[own private key]" > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
