@@ -8,9 +8,7 @@
 1. Linux environment
 2. Image group for your own dataset
 
-# I. Introduction to YOLOv5
-
-# II. Introduction to ROS
+# I. Introduction to ROS
 
 ### A. How to install ROS Noetic
 1. You can take a look at the ROS Wiki page to follow <a href="http://wiki.ros.org/noetic/Installation/Ubuntu">instructions to ROS Noetic installation</a>.
@@ -37,9 +35,11 @@
        $ catkin_make
        $ source devel/setup.bash (This command must be run on every shell you are using for ROS from now on)
        
-# III. Custom the program (you can skip to IV if you only want to detect duckie)
+# II. Introduction to YOLOv5
 
-### A. Prepare a dataset 
+### A. Custom the program (you can skip to B if you only want to detect duckie)
+
+- Prepare a dataset 
 
 1. Data preparation from duckiebot camera (You can skip this step if you already have your own images).
        
@@ -57,7 +57,8 @@
       
       From now on, you need to remember the "<b>link</b>" provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
-### B. Train dataset
+- Train the dataset:
+
 1. Go into the '/content' folder in this git repository and clean it.
 
        $ cd Duckietown_YOLOv5/content
@@ -176,7 +177,7 @@
        
       You will see two * .pt files, which are your weights files. 
 
-# IV. How to run the program
+### B. How to run the program
 
 
 
