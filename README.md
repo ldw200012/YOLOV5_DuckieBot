@@ -37,7 +37,7 @@
        $ catkin_make
        $ source devel/setup.bash (This command must be run on every shell you are using for ROS from now on)
        
-# III. How to run the program
+# III. Custom the program (you can skip to IV if you only want to detect duckie)
 
 ### A. Prepare a dataset 
 
@@ -58,9 +58,10 @@
       From now on, you need to remember the "<b>link</b>" provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
 ### B. Train dataset
-1. Go into the '/content' folder in this git repository.
+1. Go into the '/content' folder in this git repository and clean it.
 
        $ cd Duckietown_YOLOv5/content
+       $ rm -rf *
        
 2. Clone a git repository below
 
@@ -86,7 +87,7 @@
    (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
        $ cd Duckietown_YOLOv5/content
-       $ curl -L "https://app.roboflow.com/[own private key]" > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
+       $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
 
       Then check the created data.yaml file
       
@@ -175,7 +176,9 @@
        
       You will see two * .pt files, which are your weights files. 
 
-### C. Detect Objects 
+# IV. How to run the program
+
+
 
 ***
 # About the Project
