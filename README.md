@@ -45,7 +45,11 @@
        
        $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
        $ cd [folder_directory_to_save_images]
+       $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw _save_all_image:=false _filename_format:=foo.jpg __name:=image_saver
+       $ rosservice call /image_saver/save
+       
        $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw
+       
      
       ii. Data Annotation
 
