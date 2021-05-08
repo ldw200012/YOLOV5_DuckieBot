@@ -39,42 +39,42 @@
 
 ### A. Custom the program (you can skip to B if you only want to detect duckie)
 
-- Prepare a dataset 
+1. Prepare a dataset 
 
-1. Data preparation from duckiebot camera (You can skip this step if you already have your own images).
+      i. Data preparation from duckiebot camera (You can skip this step if you already have your own images).
        
        $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
        $ cd [folder_directory_to_save_images]
        $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw
      
-2. Data Annotation
+      ii. Data Annotation
 
       Follow the instructions in Roboflow https://blog.roboflow.com/vott/
       
-3. Dataset Creation
+      iii. Dataset Creation
        
       Follow the instructions in Roboflow https://www.youtube.com/watch?v=MdF6x6ZmLAY until 15:40.
       
       From now on, you need to remember the "<b>link</b>" provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
   
-- Train the dataset:
+2. Train the dataset:
 
-1. Go into the '/content' folder in this git repository and clean it.
+      i. Go into the '/content' folder in this git repository and clean it.
 
        $ cd Duckietown_YOLOv5/content
        $ rm -rf *
        
-2. Clone a git repository below
+      ii. Clone a git repository below
 
        $ git clone https://github.com/ultralytics/yolov5
        $ cd yolov5
        $ git reset --hard 886f1c03d839575afecb059accf74296fad395b6
        
-3. Install all requirements (ignore errors)
+      iii. Install all requirements (ignore errors)
 
        $ pip install -qr requirements.txt
 
-4. Open Python and run below codes
+      iv. Open Python and run below codes
 
        $ python
        >> import torch
@@ -83,9 +83,9 @@
        >> 
        >> print('Setup complete. Using torch %s %s' % (torch.__version__, torch.cuda.get_device_properties(0) if torch.cuda.is_available() else 'CPU'))
 
-5. Copy and paste the Terminal link from your Roboflow dataset.
+      v. Copy and paste the Terminal link from your Roboflow dataset.
        
-   (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
+      (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
        $ cd Duckietown_YOLOv5/content
        $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
@@ -96,7 +96,7 @@
        
       Now you will see the data.yaml file created.
        
-6. Open Python and run below codes
+      vi. Open Python and run below codes
 
        $ python
        >> # define number of classes based on YAML
@@ -104,7 +104,7 @@
        >> with open("data.yaml", 'r') as stream:
        ..     num_classes = str(yaml.safe_load(stream)['nc'])
        
-7. Create your own .yaml file
+      vii. Create your own .yaml file
 
        $ cd Duckietown_YOLOv5content/yolov5/models/
        $ touch custom_yolov5s.yaml
@@ -163,14 +163,14 @@
          
       Now you are ready to train your own data!
 
-8. Train your own dataset
+      viii. Train your own dataset
 
        $ cd Duckietown_YOLOv5/content/yolov5/
        $ python train.py --img 416 --batch 16 --epochs 100 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
        
       You can change the epochs number as you want :-)
 
-9. Check for trained weights
+      ix. Check for trained weights
 
        $ ls runs/
        $ ls runs/train/yolov5s_results/weights
