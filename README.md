@@ -1,8 +1,24 @@
 # <div align=center>duckietown_object_recognition</div>
 #### <div align="center">" This repository is created for object recognition functionality of Duckiebot, </div>
 #### <div align="center"> which reads the camera view of a duckiebot and detects the obstacle in the front. "</div>
+
 ***
-# I. Introduction to [Algorithm]
+
+# What you need to prepare
+1. Linux environment
+2. Annotated Image group for your own dataset
+3. 
+
+# I. Introduction to YOLOv5 on Custom Dataset
+Reference Video : https://www.youtube.com/watch?v=MdF6x6ZmLAY by Roboflow
+
+- YOLOv5 algorithm on Google Colab
+Fully follow the instructions of the reference video.
+
+- YOLOv5 algorithm on ROS
+Follow the instructions on the reference video until 15:40.
+
+
 
 # II. Introduction to ROS
 
