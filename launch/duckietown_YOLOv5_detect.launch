@@ -1,5 +1,5 @@
 <launch>
-	<node name="duckietown_YOLOv5_detect" pkg="duckietown_YOLOv5" type="detect.py" output="screen"/>
+	<node name="duckietown_yolov5_detect" pkg="duckietown_yolov5" type="detect.py" output="screen"/>
 	<arg name="img" default="416" doc="Image width(= Height)"/>
 	<arg name="weights" default='runs/train/yolov5s_results/weights/best.pt' doc="File directory of weight file"/>
 	<arg name="conf" default="0.4"/>
