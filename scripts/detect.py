@@ -66,7 +66,12 @@ def detect(save_img=False):
         model(torch.zeros(1, 3, imgsz, imgsz).to(device).type_as(next(model.parameters())))  # run once
     t0 = time.time()
     for path, img, im0s, vid_cap in dataset:
-        print(path, img, im0s, vid_cap)
+        
+        print("path: ", path)
+        print("img: ", img, img.shape)
+        print("im0s: ", im0s, im0s.shape)
+        print("vid_cap: ",vid_cap)
+        
         img = torch.from_numpy(img).to(device)
         img = img.half() if half else img.float()  # uint8 to fp16/32
         img /= 255.0  # 0 - 255 to 0.0 - 1.0
