@@ -9,6 +9,7 @@ import cv2
 import torch
 import torch.backends.cudnn as cudnn
 from numpy import random
+from skimage.transform import resize
 
 from models.experimental import attempt_load
 from utils.datasets import LoadStreams, LoadImages
@@ -122,6 +123,7 @@ def detect(save_img=False):
                 cv2.imshow(str(p), im0)
                 cv2.waitKey(1)  # 1 millisecond
 
+            im0 = resize(im0, (480, 640))
             print("This is the output", im0.shape)
 
             # # Save results (image with detections)
