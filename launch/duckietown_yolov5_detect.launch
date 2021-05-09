@@ -3,6 +3,6 @@
 	<arg name="img" default="416" doc="Image width(= Height)"/>
 	<arg name="weights" default='runs/train/yolov5s_results/weights/best.pt' doc="File directory of weight file"/>
 	<arg name="conf" default="0.4"/>
-	<arg name="source" default="../test/images" doc="File directory of testing images"/>
+	<arg name="source" default="../content/test/images" doc="File directory of testing images"/>
 </launch>
 
