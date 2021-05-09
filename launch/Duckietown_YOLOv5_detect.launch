@@ -1,0 +1,3 @@
+<launch>
+	<node name="Duckietown_YOLOv5_detect" pkg="Duckietown_YOLOv5" type="detect.py" output="screen"/>
+</launch>
