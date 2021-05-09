@@ -21,11 +21,6 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 def detect(save_img=False):
     
-    pub = rospy.Publisher('JoudiDuck/', String, queue_size=10)
-    rospy.init_node('duckietown_yolov5_detect', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    
-    while not rospy.is_shutdown():
     source, weights, view_img, save_txt, imgsz = opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
     webcam = source.isnumeric() or source.endswith('.txt') or source.lower().startswith(
         ('rtsp://', 'rtmp://', 'http://'))
@@ -62,6 +57,7 @@ def detect(save_img=False):
         save_img = True
         dataset = LoadImages(source, img_size=imgsz, stride=stride)
 
+    print(dataset)
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
     colors = [[random.randint(0, 255) for _ in range(3)] for _ in names]
