@@ -142,4 +142,4 @@ def detect(save_img=False):
         print(f"Results saved to {save_dir}{s}")
 
     print(f'Done. ({time.time() - t0:.3f}s)')
-    return {save_dir}{s}
+    return f"{save_dir}{s}"
