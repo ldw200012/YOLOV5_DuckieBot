@@ -1,5 +1,6 @@
 #!usr/bin/env python
 import rospy
+from sensor_msgs.msg import Image
 
 import argparse
 import time
@@ -19,6 +20,12 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 
 def detect(save_img=False):
+    
+    pub = rospy.Publisher('JoudiDuck/', String, queue_size=10)
+    rospy.init_node('duckietown_yolov5_detect', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    
+    while not rospy.is_shutdown():
     source, weights, view_img, save_txt, imgsz = opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
     webcam = source.isnumeric() or source.endswith('.txt') or source.lower().startswith(
         ('rtsp://', 'rtmp://', 'http://'))
@@ -151,7 +158,8 @@ def detect(save_img=False):
 
 
 if __name__ == '__main__':
-    try:
+    
+    try:    
         parser = argparse.ArgumentParser()
         parser.add_argument('--weights', nargs='+', type=str, default='runs/train/yolov5s_results/weights/best.pt', help='model.pt path(s)')
         parser.add_argument('--source', type=str, default='../content/test/images', help='source')  # file/folder, 0 for webcam
