@@ -6,10 +6,10 @@ from utils.general import check_img_size, check_requirements, check_imshow, non_
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='yolov5s.pt', help='model.pt path(s)')
-    parser.add_argument('--source', type=str, default='data/images', help='source')  # file/folder, 0 for webcam
-    parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
-    parser.add_argument('--conf-thres', type=float, default=0.25, help='object confidence threshold')
+    parser.add_argument('--weights', nargs='+', type=str, default='runs/train/yolov5s_results/weights/best.pt', help='model.pt path(s)')
+    parser.add_argument('--source', type=str, default='../content/test/images', help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--img-size', type=int, default=416, help='inference size (pixels)')
+    parser.add_argument('--conf-thres', type=float, default=0.4, help='object confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='IOU threshold for NMS')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--view-img', action='store_true', help='display results')
