@@ -1,3 +1,6 @@
+#!usr/bin/env python
+import rospy
+
 import argparse
 import time
 from pathlib import Path
