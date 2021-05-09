@@ -122,7 +122,7 @@ def detect(save_img=False):
                 cv2.imshow(str(p), im0)
                 cv2.waitKey(1)  # 1 millisecond
 
-            print("This is the output", im0)
+            print("This is the output", im0.shape)
 
             # # Save results (image with detections)
             # if save_img:
