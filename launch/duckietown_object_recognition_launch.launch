@@ -1,3 +1,3 @@
 <launch>
-	<node name="dt_object_recognition_node" pkg="duckietown_object_recognition" type="dt_object_recognition.py" output="screen"/>
+	<node name="dt_object_recognition_node" pkg="Duckietown_YOLOv5" type="dt_object_recognition.py" output="screen"/>
 </launch>
