@@ -1,4 +1,4 @@
-# <div align=center>duckietown_YOLOv5</div>
+# <div align=center>duckietown_yolov5</div>
 #### <div align="center">" This repository is created for object recognition functionality of Duckiebot, </div>
 #### <div align="center"> which reads the camera view of a duckiebot and detects the obstacle in the front. "</div>
 
@@ -27,7 +27,7 @@
        
 3. Copy a ROS Package
 
-       $ git clone https://github.com/ldw200012/Duckietown_YOLOv5.git
+       $ git clone https://github.com/ldw200012/duckietown_yolov5.git
 
 4. Run below commands to configure your ROS Package
 
