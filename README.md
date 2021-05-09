@@ -185,7 +185,7 @@
 1. Object Detection
         
        $ cd Duckietown_YOLOv5/content/yolov5/
-       $ python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../test/images
+       $ python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../content/test/images
 
 
 
