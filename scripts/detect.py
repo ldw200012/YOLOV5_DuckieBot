@@ -140,8 +140,8 @@ def detect(save_img=False):
                     vid_writer.write(im0)
 
     if save_txt or save_img:
-        s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
-        print(f"Results saved to {save_dir}{s}")
+		s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
+		print(f"Results saved to {save_dir}{s}")
 
     print(f'Done. ({time.time() - t0:.3f}s)')
 
@@ -170,11 +170,11 @@ if __name__ == '__main__':
 		check_requirements()
 
 		with torch.no_grad():
-		    if opt.update:  # update all models (to fix SourceChangeWarning)
-			for opt.weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
-			    detect()
-			    strip_optimizer(opt.weights)
-		    else:
-			detect()
+			if opt.update:  # update all models (to fix SourceChangeWarning)
+				for opt.weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
+					detect()
+					strip_optimizer(opt.weights)
+			else:
+				detect()
 	except rospy.ROSInterruptException:
 		pass
