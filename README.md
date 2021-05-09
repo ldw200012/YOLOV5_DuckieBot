@@ -182,6 +182,11 @@
       You will see two * .pt files, which are your weights files. 
 
 ### B. How to run the program
+1. Object Detection
+        
+       $ cd Duckietown_YOLOv5/content/yolov5/
+       $ python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../test/images
+
 
 
 
