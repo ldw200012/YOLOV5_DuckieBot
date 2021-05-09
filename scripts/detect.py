@@ -124,7 +124,6 @@ def detect(save_img=False):
                 cv2.waitKey(1)  # 1 millisecond
 
             im0 = resize(im0, (480, 640))
-            print("This is the output", im0.shape)
 
             # # Save results (image with detections)
             # if save_img:
