@@ -1,4 +1,7 @@
+import argparse
 from detect import detect
+from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
+    scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
