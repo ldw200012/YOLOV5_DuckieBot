@@ -19,7 +19,7 @@ def callback(data, opt):
     bridge = CvBridge()
     cv_image = bridge.imgmsg_to_cv2(data, "bgr8")
     
-    img_save_path = "../content/test/images/frame.jpg"
+    img_save_path = "../content/test/frame_images/frame.jpg"
     if os.path.exists(img_save_path):
         os.remove(img_save_path)
     cv2.imwrite(img_save_path, cv_image)
