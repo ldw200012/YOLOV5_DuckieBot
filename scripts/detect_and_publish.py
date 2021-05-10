@@ -1,17 +1,27 @@
 #! /usr/bin/env python
 from sensor_msgs.msg import Image
 
+import os
 import argparse
 import torch
+import cv2
 from detect import detect
 from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
     scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path
+from cv_bridge import CvBridge, CvBridgeError
 
 
 def callback(data):
     pub = rospy.Publisher('/JoudiDuck/camera_node/image/detected', Image, queue_size=10)
     
-    # Detection and save    
+    # Save rostopic images into directory
+    bridge = CvBridge()
+    cv_image = bridge.imgmsg_to_cv(data, encoding="bgr8")
+    img_save_path = "/home/dongwooklee/catkin_ws/src/duckietown_yolov5/content/test/images/frame.jpg"
+    os.remove(img_save_path)    
+    cv2.imwrite(img_save_path, cv_image)
+    
+    # Detection from directory and save
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default='runs/train/yolov5s_results/weights/best.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str, default='../content/test/images', help='source')  # file/folder, 0 for webcam
@@ -40,12 +50,15 @@ def callback(data):
                 strip_optimizer(opt.weights)
         else:
             output_dir = detect(opt)
-        print(output_dir)
 
     # Publish into new rostopic
+    img_read_path = "/home/dongwooklee/catkin_ws/src/duckietown_yolov5/scripts/" + output_dir + "/frame.jpg"
+    cv_image_detected = cv2.imread(img_read_path)
+    pub.publish(bridge.cv_to_imgmsg(cv_image_detected, "bgr8"))
 
-    # Delete image from folder
-
+    # Delete image and folder
+    os.remove(img_read_path)
+    os.rmdir(img_read_path[:69+(len(output_dir)-11)])
 
 if __name__ == '__main__':
     
@@ -53,7 +66,7 @@ if __name__ == '__main__':
     
     # Subscribe image from rostopic        
     while not rospy.is_shutdown():         
-        rospy.Subscriber("/JoudiDuck/camera_node/image/raw", String, callback)
+        rospy.Subscriber("/JoudiDuck/camera_node/image/raw", Image, callback)
 
         
         
