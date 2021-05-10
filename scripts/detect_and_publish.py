@@ -67,6 +67,8 @@ if __name__ == '__main__':
     print(opt)
     check_requirements()
     
+    rospy.Timer(rospy.Duation(0.1), callback)
+    
     # Subscribe image from rostopic        
     while not rospy.is_shutdown():         
         rospy.Subscriber("/JoudiDuck/camera_node/image/raw", Image, callback, opt)
