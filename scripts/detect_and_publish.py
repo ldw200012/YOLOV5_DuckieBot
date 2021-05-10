@@ -22,6 +22,7 @@ def callback(data, opt):
     img_save_path = "../content/test/frame_images/frame.jpg"
     if os.path.exists(img_save_path):
         os.remove(img_save_path)
+        print("Ready for new frame")
     cv2.imwrite(img_save_path, cv_image)
 
     with torch.no_grad():
