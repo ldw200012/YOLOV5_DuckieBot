@@ -18,7 +18,7 @@ def callback(data):
     # Save rostopic images into directory
     bridge = CvBridge()
     cv_image = bridge.imgmsg_to_cv2(data, "bgr8")
-    img_save_path = "/home/dongwooklee/catkin_ws/src/duckietown_yolov5/content/test/images/frame.jpg"
+    img_save_path = "../content/test/images/frame.jpg"
     os.remove(img_save_path)    
     cv2.imwrite(img_save_path, cv_image)
     
@@ -53,13 +53,13 @@ def callback(data):
             output_dir = detect(opt)
 
     # Publish into new rostopic
-    img_read_path = "/home/dongwooklee/catkin_ws/src/duckietown_yolov5/scripts/" + output_dir + "/frame.jpg"
+    img_read_path = output_dir + "/frame.jpg"
     cv_image_detected = cv2.imread(img_read_path)
     pub.publish(bridge.cv2_to_imgmsg(cv_image_detected, "bgr8"))
 
     # Delete image and folder
     os.remove(img_read_path)
-    os.rmdir(img_read_path[:69+(len(output_dir)-11)])
+    os.rmdir(img_read_path[:(len(output_dir)-11)])
 
 if __name__ == '__main__':
     
