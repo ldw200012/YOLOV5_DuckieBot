@@ -1,5 +1,5 @@
 train: ../train/images
 val: ../valid/images
 
-nc: 3
-names: ['head', 'helmet', 'person']
+nc: 7
+names: ['Duckie', 'Duckiebot', 'Intersection sign', 'QR code', 'Signal sign', 'Stop sign', 'Traffic light']

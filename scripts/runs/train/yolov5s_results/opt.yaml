@@ -2,7 +2,7 @@ weights: ''
 cfg: ./models/custom_yolov5s.yaml
 data: ../data.yaml
 hyp: data/hyp.scratch.yaml
-epochs: 3
+epochs: 100
 batch_size: 16
 img_size:
 - 416

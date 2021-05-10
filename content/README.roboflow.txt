@@ -1,11 +1,11 @@
 
-Hard Hat Sample - v2 augmented-416x416
+duckietown-yolov5 - v1 duckietown_yolov5_v1
 ==============================
 
-This dataset was exported via roboflow.ai on May 8, 2021 at 2:34 AM GMT
+This dataset was exported via roboflow.ai on May 10, 2021 at 5:11 AM GMT
 
-It includes 240 images.
-Workers are annotated in YOLO v5 PyTorch format.
+It includes 4151 images.
+Duckietown are annotated in YOLO v5 PyTorch format.
 
 The following pre-processing was applied to each image:
 * Auto-orientation of pixel data (with EXIF-orientation stripping)
@@ -13,8 +13,7 @@ The following pre-processing was applied to each image:
 
 The following augmentation was applied to create 3 versions of each source image:
 * 50% probability of horizontal flip
-* Randomly crop between 0 and 40 percent of the image
-* Random rotation of between -15 and +15 degrees
-* Random Gaussian blur of between 0 and 1.5 pixels
+* 50% probability of vertical flip
+* Equal probability of one of the following 90-degree rotations: none, clockwise, counter-clockwise, upside-down
 
 
