@@ -41,14 +41,16 @@
        $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
        $ cd [folder_directory_to_save_images]
        $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw _save_all_image:=false _filename_format:=foo.jpg __name:=image_saver
-       $ rosservice call /image_saver/save
        
-       $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw
+      Now you can save image to the directory whenever you call the below command
        
+       $ rosservice call /image_saver/save      
+      <br> 
      
       ii. Data Annotation
 
       - Follow the instructions in Roboflow https://blog.roboflow.com/vott/
+      <br>
       
       iii. Dataset Creation
        
@@ -179,11 +181,19 @@
 ### B. How to run the program
 1. Object Detection
         
+      - In shell 1:
+     
+       $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
+       
+      - In shell 2:
+     
        $ cd Duckietown_YOLOv5/scripts
        $ python detect_and_publish.py
-
-
-
+       
+      - In shell 3:
+       
+       $ dts start_gui_tools [duckiebotname]
+       # rqt_image_view
 
 ***
 # About the Project
