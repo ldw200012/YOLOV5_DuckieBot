@@ -3,11 +3,6 @@
 #### <div align="center"> which reads the camera view of a duckiebot and detects the obstacle in the front. "</div>
 
 ***
-
-# What you need to prepare
-1. Linux environment
-2. Image group for your own dataset
-
 # I. Introduction to ROS
 
 ### A. How to install ROS Noetic
@@ -184,8 +179,8 @@
 ### B. How to run the program
 1. Object Detection
         
-       $ cd Duckietown_YOLOv5/content/yolov5/
-       $ python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../content/test/images
+       $ cd Duckietown_YOLOv5/scripts
+       $ python detect_and_publish.py
 
 
 
