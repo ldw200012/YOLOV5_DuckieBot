@@ -40,7 +40,7 @@
        
        $ rosrun image_transport republish compressed in:=/[duckiebot_name]/camera_node/image raw out:=/[duckiebot_name]/camera_node/image/raw
        $ cd [folder_directory_to_save_images]
-       $ rosrun image_view image_saver image:=/JoudiDuck/camera_node/image/raw _save_all_image:=false _filename_format:=foo.jpg __name:=image_saver
+       $ rosrun image_view image_saver image:=/[duckiebot_name]/camera_node/image/raw _save_all_image:=false _filename_format:=foo.jpg __name:=image_saver
        
       Now you can save image to the directory whenever you call the below command
        
@@ -63,7 +63,7 @@
 
       i. Go into the '/content' folder in this git repository and clean it.
 
-       $ cd Duckietown_YOLOv5/content
+       $ cd duckietown_yolov5/content
        $ rm -rf *
       <br>
       
@@ -89,11 +89,10 @@
        >> print('Setup complete. Using torch %s %s' % (torch.__version__, torch.cuda.get_device_properties(0) if torch.cuda.is_available() else 'CPU'))
       <br>
       
-      v. Copy and paste the Terminal link from your Roboflow dataset.
+      v. In '/content' folder, copy and paste the Terminal link from your Roboflow dataset.
        
       (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
-       $ cd Duckietown_YOLOv5/content
        $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
        $ cat data.yaml      
       <br>
@@ -109,7 +108,7 @@
        
       vii. Create your own .yaml file
 
-       $ cd Duckietown_YOLOv5content/yolov5/models/
+       $ cd yolov5/models/
        $ touch custom_yolov5s.yaml
        $ nano custom_yolov5s.yaml
        
@@ -165,9 +164,9 @@
          ]
       <br>
 
-      viii. Train your own dataset
+      viii. Train your own dataset in the '/yolov5' directory.
 
-       $ cd Duckietown_YOLOv5/content/yolov5/
+       $ cd ..
        $ python train.py --img 416 --batch 16 --epochs 100 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
        
       You can change the epochs number as you want
