@@ -203,7 +203,7 @@
 
 # III. Dataset
 
-- The Dataset has been provided by https://github.com/saryazdi/Duckietown-Object-Detection-LFV/blob/master/DuckietownObjectDetectionDataset.md
+- The Dataset has been provided by https://github.com/duckietown/duckietown-objdet
 
 ***
 # About the Project
