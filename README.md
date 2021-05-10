@@ -63,14 +63,14 @@
 
       i. Go into the '/content' folder in this git repository and clean it.
 
-       $ cd duckietown_yolov5/content
+       $ roscd duckietown_yolov5/content/
        $ rm -rf *
       <br>
       
       ii. Clone a git repository below
 
        $ git clone https://github.com/ultralytics/yolov5
-       $ cd yolov5
+       $ roscd duckietown_yolov5/content/yolov5/
        $ git reset --hard 886f1c03d839575afecb059accf74296fad395b6
       <br>
        
@@ -108,7 +108,7 @@
        
       vii. Create your own .yaml file
 
-       $ cd yolov5/models/
+       $ roscd duckietown_yolov5/content/yolov5/models/
        $ touch custom_yolov5s.yaml
        $ nano custom_yolov5s.yaml
        
@@ -166,7 +166,7 @@
 
       viii. Train your own dataset in the '/yolov5' directory.
 
-       $ cd ..
+       $ roscd duckietown_yolov5/content/yolov5/
        $ python train.py --img 416 --batch 16 --epochs 100 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
        
       You can change the epochs number as you want
@@ -180,6 +180,9 @@
        
       You will see two * .pt files, which are your weights files.
       <br>
+      
+      x. THE MOST IMPORTANT STEP
+      * <b>Move all the files and subfolders from 'duckietown_yolov5/content/yolov5/' to 'duckietown_yolov5/scripts/' except 'detect.py'.</b>
 
 ### B. How to run the program
 1. Object Detection
@@ -190,7 +193,7 @@
        
       - In shell 2:
      
-       $ cd duckietown_yolov5/script
+       $ roscd duckietown_yolov5/script/
        $ python detect_and_publish.py
        
       - In shell 3:
