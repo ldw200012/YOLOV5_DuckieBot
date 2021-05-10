@@ -67,7 +67,7 @@ if __name__ == '__main__':
     print(opt)
     check_requirements()
     
-    rospy.Timer(rospy.Duration(0.1), callback, opt)
+    rospy.Timer(rospy.Duration(0.1), opt)
     
     # Subscribe image from rostopic        
     while not rospy.is_shutdown():         
