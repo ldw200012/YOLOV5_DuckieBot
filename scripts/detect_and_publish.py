@@ -107,7 +107,7 @@ if __name__ == '__main__':
         dt_objdt.subscriber()
         
         rospy.spin()
-    else:
+    except rospy.ROSInterruptException:
         pass
 
         
