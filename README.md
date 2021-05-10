@@ -57,6 +57,7 @@
       - Follow the instructions in Roboflow https://www.youtube.com/watch?v=MdF6x6ZmLAY until 15:40.
       
         From now on, you need to remember the "<b>link</b>" provided by Roboflow. (Choose 'Terminal' among 'Jupyter/Terminal/Raw URL')
+        <br>
   
 2. Train the dataset:
 
@@ -64,16 +65,19 @@
 
        $ cd Duckietown_YOLOv5/content
        $ rm -rf *
-       
+      <br>
+      
       ii. Clone a git repository below
 
        $ git clone https://github.com/ultralytics/yolov5
        $ cd yolov5
        $ git reset --hard 886f1c03d839575afecb059accf74296fad395b6
+      <br>
        
       iii. Install all requirements (ignore errors)
 
        $ pip install -qr requirements.txt
+      <br>
 
       iv. Open Python and run below codes
 
@@ -83,19 +87,16 @@
        >> from utils.google_utils import gdrive_download
        >> 
        >> print('Setup complete. Using torch %s %s' % (torch.__version__, torch.cuda.get_device_properties(0) if torch.cuda.is_available() else 'CPU'))
-
+      <br>
+      
       v. Copy and paste the Terminal link from your Roboflow dataset.
        
       (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
        $ cd Duckietown_YOLOv5/content
        $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
-
-      Then check the created data.yaml file
-      
        $ cat data.yaml      
-       
-      Now you will see the data.yaml file created.
+      <br>
        
       vi. Open Python and run below codes
 
@@ -104,6 +105,7 @@
        >> import yaml
        >> with open("data.yaml", 'r') as stream:
        ..     num_classes = str(yaml.safe_load(stream)['nc'])
+      <br>
        
       vii. Create your own .yaml file
 
@@ -161,22 +163,22 @@
 
           [[17, 20, 23], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
          ]
-         
-      Now you are ready to train your own data!
+      <br>
 
       viii. Train your own dataset
 
        $ cd Duckietown_YOLOv5/content/yolov5/
        $ python train.py --img 416 --batch 16 --epochs 100 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
        
-      You can change the epochs number as you want :-)
+      You can change the epochs number as you want
 
       ix. Check for trained weights
 
        $ ls runs/
        $ ls runs/train/yolov5s_results/weights
        
-      You will see two * .pt files, which are your weights files. 
+      You will see two * .pt files, which are your weights files.
+      <br>
 
 ### B. How to run the program
 1. Object Detection
@@ -198,8 +200,8 @@
 ***
 # About the Project
 
-#### Module Name: 
-#### Instructors: 
-#### Contributors: 
+#### Module Name: CO-548-A RIS Project
+#### Instructor: Prof. Francesco Maurelli
+#### Contributors: Dongwook Lee, Joudi Alzaeem, Kamilla Shagazatova
 
 
