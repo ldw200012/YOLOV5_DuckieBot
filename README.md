@@ -71,6 +71,7 @@
       
       ii. Clone a git repository below
 
+       $ roscd duckietown_yolov5/content/
        $ git clone https://github.com/ultralytics/yolov5
        $ roscd duckietown_yolov5/content/yolov5/
        $ git reset --hard 886f1c03d839575afecb059accf74296fad395b6
