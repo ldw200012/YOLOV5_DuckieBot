@@ -10,7 +10,8 @@ from utils.general import check_img_size, check_requirements, check_imshow, non_
 if __name__ == '__main__':
     
     while not rospy.is_shutdown():
-        rospy.init_node('')
+        rospy.init_node('/JoudiDuck/camera_node/image/detected')
+        
         
         # Subscribe image from rostopic
         
