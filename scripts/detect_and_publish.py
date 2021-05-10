@@ -42,6 +42,10 @@ def callback(data, opt):
 #     os.remove(img_read_path)
 #     os.rmdir(output_dir)
 
+
+def my_subscriber(opt):
+    rospy.Subscriber("/JoudiDuck/camera_node/image/raw", Image, callback, opt)
+
 if __name__ == '__main__':
     
     rospy.init_node('duckietown_yolov5')   
@@ -68,11 +72,8 @@ if __name__ == '__main__':
     print(opt)
     check_requirements()
     
-#     rospy.Timer(rospy.Duration(0.1), opt)
-    
-    # Subscribe image from rostopic        
-    while not rospy.is_shutdown():         
-        rospy.Subscriber("/JoudiDuck/camera_node/image/raw", Image, callback, opt)
+    rospy.Timer(rospy.Duration(0.5), my_subscriber)    
+        
 
         
         
