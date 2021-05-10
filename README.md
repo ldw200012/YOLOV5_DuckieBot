@@ -60,10 +60,13 @@
         
 2. Train the dataset:
 
-      i. Go into the '/content' folder in this git repository and clean it.
+      i. Clean some file directories
 
        $ roscd duckietown_yolov5/content/
        $ rm -rf *
+       
+       $ roscd duckietown_yolov5/scripts/       
+       delete all the files except 'detect.py' and 'detect_and_publish.py'
       <br>
       
       ii. Clone a git repository below
