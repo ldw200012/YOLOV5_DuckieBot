@@ -95,7 +95,8 @@
       v. In '/content' folder, copy and paste the Terminal link from your Roboflow dataset.
        
       (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
-
+       
+       $ roscd duckietown_yolov5/content/
        $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
        $ cat data.yaml      
       <br>
