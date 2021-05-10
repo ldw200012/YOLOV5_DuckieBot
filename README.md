@@ -201,6 +201,10 @@
        $ dts start_gui_tools [duckiebotname]
        # rqt_image_view
 
+# III. Dataset
+
+- The Dataset has been provided by https://github.com/saryazdi/Duckietown-Object-Detection-LFV/blob/master/DuckietownObjectDetectionDataset.md
+
 ***
 # About the Project
 
