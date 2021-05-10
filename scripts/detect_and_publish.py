@@ -10,7 +10,9 @@ from utils.general import check_img_size, check_requirements, check_imshow, non_
 if __name__ == '__main__':
     
     while not rospy.is_shutdown():
-        rospy.init_node('/JoudiDuck/camera_node/image/detected')
+        rospy.init_node('duckietown_yolov5')
+        pub = rospy.Publisher('/JoudiDuck/camera_node/image/detected', Image, queue_size=10)
+        rospy.Subscriber("/JoudiDuck/camera_node/image/raw", String, callback)
         
         
         # Subscribe image from rostopic
