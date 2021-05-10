@@ -62,7 +62,7 @@ def callback(data):
 
     # Delete image and folder
     os.remove(img_read_path)
-    os.rmdir(img_read_path[:(len(output_dir)-11)])
+    os.rmdir(output_dir)
 
 if __name__ == '__main__':
     
