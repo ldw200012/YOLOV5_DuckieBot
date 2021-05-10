@@ -17,7 +17,7 @@ def callback(data):
     
     # Save rostopic images into directory
     bridge = CvBridge()
-    cv_image = bridge.imgmsg_to_cv(data, encoding="bgr8")
+    cv_image = bridge.imgmsg_to_cv2(data, encoding="bgr8")
     img_save_path = "/home/dongwooklee/catkin_ws/src/duckietown_yolov5/content/test/images/frame.jpg"
     os.remove(img_save_path)    
     cv2.imwrite(img_save_path, cv_image)
