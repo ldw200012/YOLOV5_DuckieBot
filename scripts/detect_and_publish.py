@@ -47,19 +47,19 @@ def callback(data):
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
             for opt.weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
-                output_dir = detect(opt)
+                im0 = detect(opt)
                 strip_optimizer(opt.weights)
         else:
-            output_dir = detect(opt)
+            im0 = detect(opt)
 
     # Publish into new rostopic
-    img_read_path = output_dir + "/frame.jpg"
-    cv_image_detected = cv2.imread(img_read_path)
-    pub.publish(bridge.cv2_to_imgmsg(cv_image_detected, "bgr8"))
+#     img_read_path = output_dir + "/frame.jpg"
+#     cv_image_detected = cv2.imread(img_read_path)
+    pub.publish(bridge.cv2_to_imgmsg(im0, "bgr8"))
 
     # Delete image and folder
-    os.remove(img_read_path)
-    os.rmdir(output_dir)
+#     os.remove(img_read_path)
+#     os.rmdir(output_dir)
 
 if __name__ == '__main__':
     
