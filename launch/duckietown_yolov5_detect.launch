@@ -1,4 +1,4 @@
 <launch>
-	<node name="/JoudiDuck/camera_node/image/detected" pkg="duckietown_yolov5" type="detect_and_publish.py" output="screen"/>
+	<node name="duckietown_yolov5" pkg="duckietown_yolov5" type="detect_and_publish.py" output="screen"/>
 </launch>
 
