@@ -91,7 +91,7 @@
       
       v. In '/content' folder, copy and paste the Terminal link from your Roboflow dataset.
        
-      (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
+      * (If you see a question "replace data.yaml? [y]es, [n]o, [A]ll, [r]ename:", enter A for all)
 
        $ curl -L "https://..." > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
        $ cat data.yaml      
@@ -112,7 +112,7 @@
        $ touch custom_yolov5s.yaml
        $ nano custom_yolov5s.yaml
        
-      Then, paste the below cell into custom_yolov5s.yaml, save.
+      * Then, paste the below cell into custom_yolov5s.yaml, save.
        
        # parameters
        nc: {num_classes}  # number of classes
@@ -169,7 +169,7 @@
        $ roscd duckietown_yolov5/content/yolov5/
        $ python train.py --img 416 --batch 16 --epochs 100 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
        
-      You can change the epochs number as you want
+      * You can change the epochs number as you want
       <br>
       <br>
 
@@ -178,7 +178,8 @@
        $ ls runs/
        $ ls runs/train/yolov5s_results/weights
        
-      You will see two * .pt files, which are your weights files.
+      * You will see two * .pt files, which are your weights files.
+      <br>
       <br>
       
       x. THE MOST IMPORTANT STEP
