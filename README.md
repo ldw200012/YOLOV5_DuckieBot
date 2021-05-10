@@ -172,7 +172,7 @@
        
       You can change the epochs number as you want
       <br>
-      
+      <br>
 
       ix. Check for trained weights
 
