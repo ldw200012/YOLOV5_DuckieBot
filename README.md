@@ -190,7 +190,7 @@
        
       - In shell 2:
      
-       $ cd Duckietown_YOLOv5/scripts
+       $ cd 
        $ python detect_and_publish.py
        
       - In shell 3:
