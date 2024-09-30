@@ -1,4 +1,4 @@
-# <div align=center>duckietown_yolov5</div>
+# <div align=center>YOLOV5_DuckieBot</div>
 #### <div align="center">" This repository is created for object recognition functionality of Duckiebot, </div>
 #### <div align="center"> which reads the camera view of a duckiebot and detects the obstacle in the front. "</div>
 
